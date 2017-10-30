@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { View, TouchableOpacity, Text } from 'react-native'
 import { getMetricMetaInfo, timeToString } from '../utils/helpers'
 import FitnessSlider from './FitnessSlider'
-import Steppers from './Steppers'
+import FitnessStepper from './FitnessStepper'
 import DateHeader from './DateHeader'
 
 const SubmitBtn = ({ onPress }) => (
@@ -86,7 +86,7 @@ class AddEntry extends Component {
                             {getIcon()}
                             {type === 'slider'
                                 ? <FitnessSlider value={value} onChange={(value) => this.slide(key, value)} {...rest}/>
-                                : <Steppers onIncrement={() => this.increment(key)} onDecrement={() => this.decrement(key)} {...rest}/>
+                                : <FitnessStepper value={value} onIncrement={() => this.increment(key)} onDecrement={() => this.decrement(key)} {...rest}/>
                             }
                         </View>
                     )
