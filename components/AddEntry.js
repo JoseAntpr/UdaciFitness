@@ -4,6 +4,8 @@ import { getMetricMetaInfo, timeToString } from '../utils/helpers'
 import FitnessSlider from './FitnessSlider'
 import FitnessStepper from './FitnessStepper'
 import DateHeader from './DateHeader'
+import { Ionicons } from '@expo/vector-icons'
+import TextButton from './TextButton'
 
 const SubmitBtn = ({ onPress }) => (
     <TouchableOpacity onPress={onPress}>
@@ -71,8 +73,31 @@ class AddEntry extends Component {
 
         // Clean local notification
     }
+    
+    reset = () => {
+       const key = timeToString()
+        // Update Redux
+
+        // Navigate home
+
+        // Save to database
+    }
 
     render() {
+
+        // Change to this.props.alreadyLogged
+        if (true) {
+            return (
+                <View>
+                    <Ionicons name='ios-happy-outline' size={100}/>
+                    <Text>You already logged your information for today.</Text>
+                    <TextButton onPress={this.reset}>
+                        Reset
+                    </TextButton>
+                </View>
+            )
+        }
+
         const metaInfo = getMetricMetaInfo()
         return (
             <View>
