@@ -6,6 +6,7 @@ import FitnessStepper from './FitnessStepper'
 import DateHeader from './DateHeader'
 import { Ionicons } from '@expo/vector-icons'
 import TextButton from './TextButton'
+import { submitEntry, removeEntry } from '../utils/api'
 
 const SubmitBtn = ({ onPress }) => (
     <TouchableOpacity onPress={onPress}>
@@ -69,7 +70,7 @@ class AddEntry extends Component {
 
         // Navigate home
 
-        // Save to database
+        submitEntry({ key, entry })
 
         // Clean local notification
     }
@@ -80,7 +81,7 @@ class AddEntry extends Component {
 
         // Navigate home
 
-        // Save to database
+        removeEntry(key)
     }
 
     render() {
