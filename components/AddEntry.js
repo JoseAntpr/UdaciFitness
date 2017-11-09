@@ -92,7 +92,6 @@ class AddEntry extends Component {
     }
 
     render() {
-        console.log(this.props.alreadyLogged)
         if (this.props.alreadyLogged) {
             return (
                 <View>
